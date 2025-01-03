@@ -19,7 +19,7 @@ public class NodeRed : MonoBehaviour
     {
         if (collision.transform.CompareTag("BlueBullet") && rend.material.color == red)
         {
-            Debug.Log("OK");
+            Debug.Log("+1");
             rend.material.color = blue;
             Destroy(collision.gameObject);
         }
