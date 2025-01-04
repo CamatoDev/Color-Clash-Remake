@@ -10,6 +10,11 @@ public class Turret : MonoBehaviour
 
     public GameObject bulletPrebab;
     public Transform firePoint;
+    public Vector3 rotation;
+    private void Start()
+    {
+        transform.rotation = Quaternion.Euler(rotation);
+    }
 
     // Update is called once per frame
     void Update()

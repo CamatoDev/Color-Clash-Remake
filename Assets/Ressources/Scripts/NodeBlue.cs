@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class NodeBlue : MonoBehaviour
 {
+    private GameObject turret;
+    public Vector3 positionOffset;
+
     public Color blue;
     public Color red;
 
@@ -14,6 +17,20 @@ public class NodeBlue : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         rend.material.color = blue;
+    }
+
+    private void OnMouseDown()
+    {
+        if(turret != null)
+        {
+            Debug.Log("Impossible de construire ici !");
+                return;
+        }
+
+        // Construction d'une tourelle
+        GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
+        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+
     }
     public void OnTriggerEnter(Collider collision)
     {
