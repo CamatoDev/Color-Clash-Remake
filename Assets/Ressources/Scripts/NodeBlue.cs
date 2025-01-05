@@ -13,14 +13,23 @@ public class NodeBlue : MonoBehaviour
     // Pour le renderer
     private Renderer rend;
 
+    private BuildManager buildManager;
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rend.material.color = blue;
+
+        buildManager = BuildManager.Instance;
     }
 
     private void OnMouseDown()
     {
+        if(buildManager.GetTurretToBuild() == null)
+        {
+            return;
+        }
+
         if(turret != null)
         {
             Debug.Log("Impossible de construire ici !");
@@ -28,7 +37,7 @@ public class NodeBlue : MonoBehaviour
         }
 
         // Construction d'une tourelle
-        GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
 
     }
