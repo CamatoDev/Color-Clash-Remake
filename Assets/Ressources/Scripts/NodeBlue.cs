@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NodeBlue : MonoBehaviour
 {
-    private GameObject turret;
+    public GameObject turret;
     public Vector3 positionOffset;
 
     public Color blue;
@@ -25,7 +25,7 @@ public class NodeBlue : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(buildManager.GetTurretToBuild() == null)
+        if(!buildManager.canBuild)
         {
             return;
         }
@@ -36,10 +36,7 @@ public class NodeBlue : MonoBehaviour
                 return;
         }
 
-        // Construction d'une tourelle
-        GameObject turretToBuild = buildManager.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
-
+        buildManager.BuildTurretOn(this);
     }
     public void OnTriggerEnter(Collider collision)
     {

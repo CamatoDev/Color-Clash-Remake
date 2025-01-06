@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class BuildManager : MonoBehaviour
 {
@@ -16,18 +17,38 @@ public class BuildManager : MonoBehaviour
     }
     #endregion
 
-    public GameObject standardBlueTurretPrefab;
-    public GameObject standardRedTurretPrefab;
+    private TurretBluePrint turretToBuild;
 
-    private GameObject turretToBuild;
-
-    public GameObject GetTurretToBuild()
-    {
-        return turretToBuild;
-    }
-
-    public void SetTurretToBuild(GameObject turret)
+    public bool canBuild { get { return turretToBuild != null; } }
+    public void SelectTurretToBuild(TurretBluePrint turret)
     {
         turretToBuild = turret;
+    }
+
+    public void BuildTurretOn(NodeBlue node)
+    {
+        if(Player1Stats.blueTimer < turretToBuild.time)
+        {
+            Debug.Log("Impossible d'effectuer l'action !");
+            return;
+        }
+
+        Player1Stats.blueTimer -= turretToBuild.time;
+
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset, Quaternion.identity);
+        node.turret = turret;
+    }
+    public void BuildTurretOn(NodeRed node)
+    {
+        if (Player2Stats.redTimer < turretToBuild.time)
+        {
+            Debug.Log("Impossible d'effectuer l'action !");
+            return;
+        }
+
+        Player2Stats.redTimer -= turretToBuild.time;
+
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset, Quaternion.identity);
+        node.turret = turret;
     }
 }
