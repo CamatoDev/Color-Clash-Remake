@@ -29,7 +29,7 @@ public class BuildManager : MonoBehaviour
     {
         if(Player1Stats.blueTimer < turretToBuild.time)
         {
-            Debug.Log("Impossible d'effectuer l'action !");
+            Debug.Log("Impossible d'effectuer l'action ! Vous devez attendre.");
             return;
         }
 
@@ -42,7 +42,7 @@ public class BuildManager : MonoBehaviour
     {
         if (Player2Stats.redTimer < turretToBuild.time)
         {
-            Debug.Log("Impossible d'effectuer l'action !");
+            Debug.Log("Impossible d'effectuer l'action ! Vous devez attendre.");
             return;
         }
 

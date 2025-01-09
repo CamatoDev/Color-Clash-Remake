@@ -46,11 +46,23 @@ public class NodeRed : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.transform.CompareTag("BlueLaser") && rend.material.color == red)
+        {
+            Debug.Log("+1");
+            rend.material.color = blue;
+        }
+
         if (collision.transform.CompareTag("RedBullet") && rend.material.color == blue)
         {
             Debug.Log("OK");
             rend.material.color = red;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.transform.CompareTag("RedLaser") && rend.material.color == blue)
+        {
+            Debug.Log("OK");
+            rend.material.color = red;
         }
     }
 }
