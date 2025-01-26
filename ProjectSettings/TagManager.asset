@@ -8,6 +8,9 @@ TagManager:
   - RedBullet
   - RedLaser
   - BlueLaser
+  - NodeBlue
+  - NodeRed
+  - Node
   layers:
   - Default
   - TransparentFX

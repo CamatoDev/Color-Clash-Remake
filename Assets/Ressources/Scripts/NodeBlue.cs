@@ -21,6 +21,7 @@ public class NodeBlue : MonoBehaviour
         rend.material.color = blue;
 
         buildManager = BuildManager.Instance;
+        //transform.tag = "NodeBlue";
     }
 
     private void OnMouseDown()
@@ -42,27 +43,35 @@ public class NodeBlue : MonoBehaviour
     {
         if (collision.transform.CompareTag("BlueBullet") && rend.material.color == red)
         {
-            Debug.Log("+1");
+            Debug.Log("+1 blue");
+            GameManager.bluePoint += 1;
             rend.material.color = blue;
+            transform.tag = "NodeBlue";
             Destroy(collision.gameObject);
         }
 
         if (collision.transform.CompareTag("BlueLaser") && rend.material.color == red)
         {
-            Debug.Log("+1");
+            Debug.Log("+1 blue");
+            GameManager.bluePoint += 1;
             rend.material.color = blue;
+            transform.tag = "NodeBlue";
         }
 
         if (collision.transform.CompareTag("RedBullet") && rend.material.color == blue)
         {
-            Debug.Log("OK");
+            Debug.Log("-1 blue");
+            GameManager.bluePoint -= 1;
             rend.material.color = red;
+            transform.tag = "NodeRed";
             Destroy(collision.gameObject);
         }
 
         if (collision.transform.CompareTag("RedLaser") && rend.material.color == blue)
         {
-            Debug.Log("OK");
+            Debug.Log("-1 blue");
+            GameManager.bluePoint -= 1;
+            transform.tag = "NodeRed";
             rend.material.color = red;
         }
     }
