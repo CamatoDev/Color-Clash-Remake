@@ -29,26 +29,38 @@ public class BuildManager : MonoBehaviour
     {
         if(Player1Stats.blueTimer < turretToBuild.time)
         {
-            Debug.Log("Impossible d'effectuer l'action ! Vous devez attendre.");
+            Debug.Log("Impossible d'effectuer l'action !");
+            return;
+        }
+
+        if (turretToBuild.color == "Red" && node.CompareTag("NodeBlue"))
+        {
+            Debug.Log("Impossible de construire ici !");
             return;
         }
 
         Player1Stats.blueTimer -= turretToBuild.time;
 
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset, Quaternion.identity);
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position, Quaternion.identity);
         node.turret = turret;
     }
     public void BuildTurretOn(NodeRed node)
     {
         if (Player2Stats.redTimer < turretToBuild.time)
         {
-            Debug.Log("Impossible d'effectuer l'action ! Vous devez attendre.");
+            Debug.Log("Impossible d'effectuer l'action !");
+            return;
+        }
+
+        if (turretToBuild.color == "Blue" && node.CompareTag("NodeRed"))
+        {
+            Debug.Log("Impossible de construire ici !");
             return;
         }
 
         Player2Stats.redTimer -= turretToBuild.time;
 
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position + node.positionOffset, Quaternion.identity);
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.transform.position, Quaternion.identity);
         node.turret = turret;
     }
 }

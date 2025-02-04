@@ -5,7 +5,6 @@ using UnityEngine;
 public class NodeBlue : MonoBehaviour
 {
     public GameObject turret;
-    public Vector3 positionOffset;
 
     public Color blue;
     public Color red;
@@ -21,7 +20,6 @@ public class NodeBlue : MonoBehaviour
         rend.material.color = blue;
 
         buildManager = BuildManager.Instance;
-        //transform.tag = "NodeBlue";
     }
 
     private void OnMouseDown()
@@ -37,6 +35,12 @@ public class NodeBlue : MonoBehaviour
                 return;
         }
 
+        //if(turret.GetComponent<TurretBluePrint>().color == "Red" && transform.CompareTag("NodeBlue"))
+        //{
+        //    Debug.Log("Impossible de construire ici !");
+        //        return;
+        //}
+
         buildManager.BuildTurretOn(this);
     }
     public void OnTriggerEnter(Collider collision)
@@ -47,6 +51,22 @@ public class NodeBlue : MonoBehaviour
             GameManager.bluePoint += 1;
             rend.material.color = blue;
             transform.tag = "NodeBlue";
+            Destroy(collision.gameObject);
+        }
+        
+        if (collision.transform.CompareTag("BlueRocket") && rend.material.color == red)
+        {
+            Collider[] collides = Physics.OverlapSphere(collision.transform.position, Bullet.explosionRadius);
+            foreach (Collider collider in collides)
+            {
+                if (collider.tag == "NodeRed")
+                {
+                    Debug.Log("+1 blue");
+                    GameManager.bluePoint += 1;
+                    rend.material.color = blue;
+                    transform.tag = "NodeBlue";
+                }
+            }
             Destroy(collision.gameObject);
         }
 

@@ -18,12 +18,15 @@ public class Turret : MonoBehaviour
     public ParticleSystem laserImpactEffect;
 
     [Header("Unity setup fields")]
-
+    public Vector3 postionOffset;
     public Vector3 rotation;
     public Vector3 maxHeight;
     public Transform firePoint;
+    public AudioSource audioSource;
     private void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        transform.position += postionOffset;
         transform.rotation = Quaternion.Euler(rotation);
     }
 
@@ -57,12 +60,14 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        audioSource.Play();
         Instantiate(bulletPrebab, firePoint.position, firePoint.rotation);
     }
 
     void Laser()
     {
         laserImpactEffect.Play();
+        audioSource.Play();
 
         Vector3 laserPosition = new Vector3(firePoint.position.x, firePoint.position.y, maxHeight.z);
 

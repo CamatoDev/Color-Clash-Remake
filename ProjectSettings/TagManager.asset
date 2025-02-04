@@ -11,6 +11,9 @@ TagManager:
   - NodeBlue
   - NodeRed
   - Node
+  - BlueRocket
+  - RedRocket
+  - Wall
   layers:
   - Default
   - TransparentFX

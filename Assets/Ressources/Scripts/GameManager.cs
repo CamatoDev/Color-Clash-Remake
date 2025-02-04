@@ -25,12 +25,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Valeur des departs des variables 
-        gameTime = 60f;
-        bluePoint = 224;
+        gameTime = 90f;
+        bluePoint = 224f;
         blueNodeNumber = 0;
         redNodeNumber = 0;
         gameEnd = false;
-        //EndGameUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -73,7 +72,6 @@ public class GameManager : MonoBehaviour
     {
         gameEnd = true;
         Debug.Log("Partie Terminée !!");
-        Debug.Log("Joueur Blue : " + blueNodeNumber + " Joueur Rouge : " + redNodeNumber);
-        //EndGameUI.SetActive(true); // Créer et coder l'objet
+        EndGameUI.SetActive(true); // Créer et coder l'objet
     }
 }

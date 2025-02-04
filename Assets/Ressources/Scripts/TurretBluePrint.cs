@@ -7,4 +7,5 @@ public class TurretBluePrint
 {
     public GameObject prefab;
     public int time;
+    public string color;
 }
