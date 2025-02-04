@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3474745681889723759}
   - component: {fileID: 6174281337568037724}
   - component: {fileID: 2011304431493783510}
-  - component: {fileID: 8141142569717700768}
+  - component: {fileID: 5478884124217755396}
+  - component: {fileID: 1681597648945687484}
   m_Layer: 0
   m_Name: RedMissile
   m_TagString: RedRocket
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8141142569717700768
-MeshCollider:
+--- !u!65 &5478884124217755396
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +103,20 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4436863061088633788, guid: 08896c7ca5648874b8b772a6d3da0549, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.01, z: 0.02}
+  m_Center: {x: -0.002800013, y: -0.0000000015133992, z: -0.000000004249159}
+--- !u!114 &1681597648945687484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5618168636442147619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0242fa3a40b15884189d08dcb7bc237c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  damage: 10

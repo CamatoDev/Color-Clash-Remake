@@ -14,6 +14,8 @@ TagManager:
   - BlueRocket
   - RedRocket
   - Wall
+  - BlueBullet2
+  - RedBullet2
   layers:
   - Default
   - TransparentFX

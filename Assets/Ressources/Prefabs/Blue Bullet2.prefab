@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2871990762106579432}
   - component: {fileID: 4130484825517831178}
   - component: {fileID: 8855423611449225670}
-  - component: {fileID: 7062053482748583319}
+  - component: {fileID: 1126735372504362326}
   - component: {fileID: 5418961794889161809}
   m_Layer: 0
   m_Name: Blue Bullet2
-  m_TagString: BlueBullet
+  m_TagString: BlueBullet2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7062053482748583319
-SphereCollider:
+--- !u!65 &1126735372504362326
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,8 +104,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0, z: 0}
 --- !u!114 &5418961794889161809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0242fa3a40b15884189d08dcb7bc237c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 50
+  damage: 10

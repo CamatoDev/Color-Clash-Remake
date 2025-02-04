@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Update is called once per frame
-    public static float explosionRadius = 2f;
+    public float speed = 70f;
+
+    public int damage = 10;
 
     private void Start()
     {
-        explosionRadius = 2f;
+
     }
     void Update()
     {
-        
-    }
+        if(transform.CompareTag("BlueBullet") || transform.CompareTag("BlueBullet2") || transform.CompareTag("RedBullet") || transform.CompareTag("RedBullet2"))
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        if(transform.CompareTag("BlueRocket") || transform.CompareTag("RedRocket"))
+        {
+            transform.position -= transform.right * speed * Time.deltaTime;
+        }
     }
 }

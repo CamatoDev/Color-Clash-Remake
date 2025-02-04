@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504014635899735611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.25, y: 1, z: -15.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -152,7 +152,7 @@ Transform:
   - {fileID: 2273732389850094551}
   - {fileID: 7526250779643372310}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5735014568247444866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   laserImpactEffect: {fileID: 0}
   postionOffset: {x: 0, y: 0.5, z: 0}
-  rotation: {x: 0, y: 90, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
   maxHeight: {x: 0, y: 0, z: 0}
   firePoint: {fileID: 2508796568309466145}
   audioSource: {fileID: 0}
@@ -321,12 +321,12 @@ Transform:
   m_GameObject: {fileID: 4739155685300729701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.526, z: 0}
+  m_LocalPosition: {x: 0, y: 0.526, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2273732389850094551}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &5532032259611761402
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,9 +353,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5532032259611761402}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5000001, y: 0.50000006, z: -0.49999988, w: -0.49999994}
-  m_LocalPosition: {x: -1.8393271, y: 0.70539284, z: 0}
-  m_LocalScale: {x: 0.044139665, y: 0.044139653, z: 0.044139665}
+  m_LocalRotation: {x: 0.00000014901158, y: 0.000000089406946, z: -0.70710677, w: -0.70710677}
+  m_LocalPosition: {x: 0, y: 0.70539284, z: 1.8393273}
+  m_LocalScale: {x: 0.04413967, y: 0.044139646, z: 0.044139657}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2273732389850094551}
