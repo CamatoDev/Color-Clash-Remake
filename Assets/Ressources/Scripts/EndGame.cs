@@ -18,8 +18,6 @@ public class EndGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;
-
         if (GameManager.blueNodeNumber > GameManager.redNodeNumber)
         {
             blueResult.text = "You Win";

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         blueNodeNumber = 0;
         redNodeNumber = 0;
         gameEnd = false;
+        EndGameUI.SetActive(false);
     }
 
     // Update is called once per frame
